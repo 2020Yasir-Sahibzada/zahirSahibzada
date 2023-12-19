@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+}
+
+.navbar-brand {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-brand p {
+    margin-bottom: 0;
+}
+
+.navbar-brand img {
+    margin-right: 15px;
+}
+
+.navbar-nav {
+    margin-left: 20px;
+}
+
+.navbar-toggler {
+    margin-right: 20px;
+}
+
+
+/* Main Picture Desing */
+#mainPic {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(230, 248, 255, 0.773);
+    padding-top: 90px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "div1 div2";
+}
+
+#div1 {
+    grid-area: div1;
+}
+
+#div1 h1 {
+    display: inline-block;
+    width: auto;
+    font-size: 5vw;
+}
+
+#div1 #text1 {
+    font-size: 24px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+}
+
+#div2 {
+    grid-area: div2;
+    border-radius: 20px;
+    background-image: url('images/2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+/* End of main Pic design */
+
+/* Main Details Desing */
+#mainDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: repeat(2, 550px); */
+    grid-template-areas: "detail1 detail2 detail3"
+                         "detail4 detail5 detail6";
+    padding: 30px 50px;
+
+}
+
+.det {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#detail1 {
+    grid-area: detail1;
+}
+
+#detail2 {
+    grid-area: detail2;
+}
+
+#detail3 {
+    grid-area: detail3;
+}
+
+#detail4 {
+    grid-area: detail4;
+}
+
+.designImg {
+    height: 170px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+.det h2::after {
+    content: '';
+    position: relative;
+    display: block;
+    height: 4px;
+    width: 0;
+    top: 3px;
+    background: linear-gradient(to right, #000, #888);
+    border-radius: 20px;
+    animation: lineAnimation 1s forwards;
+}
+
+.det h2 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.det p {
+    margin: 0;
+}
+
+.read-more-btn {
+    color: blue;
+    font-size: 12px;
+}
+
+.read-more-text {
+    display: none;
+}
+
+.read-more-text--show {
+    display: inline;
+}
+
+@keyframes lineAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 30%;
+    }
+}
+/* End of main detail design */
+
+
+/* Main Partners Design */
+
+#partners {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(230, 248, 255, 0.773);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#partners h3 {
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+#partners h3::after {
+    content: '';
+    position: relative;
+    display: block;
+    height: 4px;
+    width: 0;
+    left: 40%;
+    top: 3px;
+    background: linear-gradient(to right, #000, #888);
+    border-radius: 20px;
+    animation: lineAnimation 1s forwards;
+}
+
+#myPartners {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.par {
+    margin-top: 10px;
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-size: cover;
+}
+
+.partner1 {
+    background-image: url(partners/defence.png);
+}
+
+.partner2 {
+    background-image: url(partners/fmic.png);
+}
+
+.partner3 {
+    background-image: url(partners/health.png);
+}
+
+.partner4 {
+    background-image: url(partners/mz.jpeg);
+}
+
+.partner5 {
+    background-image: url(partners/samsung.png);
+}
+
+.partner6 {
+    background-image: url(partners/roshan.jpeg);
+}
+
+.partner7 {
+    background-image: url(partners/mtn.jpeg);
+}
+
+
+/* End of main Partners design */
+
+
+/* Media Query for Making Responsive */
+@media only screen and (max-width: 800px) {
+    #mainPic {
+        padding-top: 30px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "div1"
+                             "div2";
+    }
+
+    #div1 h1 {
+        font-size: 6vw ;
+    }
+    
+}
+
+@media only screen and (max-width: 980px) {
+    #mainDetails {
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: repeat(3, 500px); */
+        grid-template-areas: "detail1 detail2"
+                             "detail3 detail4"
+                             "detail5 detail6";
+    }
+    
+}
+
+@media only screen and (max-width: 740px) {
+    #mainDetails {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(3, 500px); */
+        grid-template-areas: "detail1" "detail2"
+                             "detail3" "detail4"
+                             "detail5" "detail6";
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+    .designImg {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .navbar-brand p {
+        font-size: 15px;
+    }
+
+    .navbar-brand img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #mainPic {
+        height: 60vh;
+    }
+
+    #mainDetails {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(3, 500px); */
+        grid-template-areas: "detail1" "detail2"
+                             "detail3" "detail4"
+                             "detail5" "detail6";
+        padding: 30px 50px;
+    }
+    .designImg {
+        height: 150px;
+    }
+
+}
+
+@media only screen and (max-width: 414px) {
+    /* #mainDetails {
+        grid-template-rows: repeat(3, 550px);
+        
+    } */
+}
+
+@media only screen and (max-width: 667px) {
+    #mainDetails {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(3, 600px); */
+        grid-template-areas: "detail1" "detail2"
+                             "detail3" "detail4"
+                             "detail5" "detail6";
+        padding: 30px 50px;
+        
+    }
+    .designImg {
+        height: 150px;
+    }
+
+    .det h2 {
+        font-size: 17px;
+    }
+    .navbar-brand p {
+        font-size: 12px;
+    }
+}
